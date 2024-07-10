@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Baskervville+SC&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+:root {
+    --primary-black: #000000;
+    --primary-white: #FFFFFF;
+    --primary-gray: #F5F5F5;
+    --primary-blue: #C2E5FD;
+    --header-size: 12vh;
+    --hero-section: 60vh;
+
+
+}
+
+.main-container {
+    background: var(--primary-gray);
+    min-height: 100vh;
+}
+
+.container {
+
+
+    height: 100vh;
+    max-width: 1050px;
+    margin: auto;
+    padding: 0 2rem;
+
+}
+
+header {
+
+    height: var(--header-size);
+}
+
+.navbar {
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.list {
+    display: flex;
+    gap: 2rem;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.navlinks {
+    font-size: 1rem;
+    color: var(--primary-black);
+}
+
+.nav-btn {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    padding: .5rem .5rem;
+    border-radius: .5rem;
+}
+
+.nav-btn:hover {
+    background-color: var(--primary-blue);
+    color: var(--primary-black);
+}
+
+
+
+
+
+
+
+.hero-section {
+
+    height: var(--hero-section);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1 {
+    font-family: "ADLaM Display", system-ui;
+    font-variant: 2.8rem;
+    margin: .4rem 0;
+}
+
+.profile-container {
+    
+    background-image: url(images/bg1.png);
+    background-position: center;
+    background-size: cover;
+    width: 13rem; 
+    aspect-ratio: 0.8;
+     
+    border-radius: 50%;
+    border: .2rem solid var(--primary-black);
+    box-shadow: 0 5px 5px var(--primary-blue);
+   animation: 6s my infinite ease-in-out;
+}
+
+.fa-brands {
+    color: var(--primary-black);
+    font-size: 1.4rem;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.8rem 0 2.5rem 0;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+.content {
+
+    width: 100%;
+    max-width: 500px;
+    font-weight: bold;
+
+}
+
+.skill {
+    background: var(--primary-white);
+    padding: .4rem .5rem;
+    border-radius: 0.5rem;
+}
+
+.project-scroller {
+
+    height: calc(100vh-var(--hero-section)-var(--header-size));
+    overflow: hidden;
+
+    white-space: nowrap;
+    position: relative;
+}
+
+.project {
+    width: 15rem;
+    height: 9rem;
+
+    position: relative;
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.proj-btn {
+    background-color: var(--primary-blue);
+    color: var(--primary-black);
+    padding: .6rem .6rem;
+    border-radius: .5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -300%);
+    transition: transfrom .3s ease-in-out;
+}
+
+.project:hover .proj-btn {
+    transform: translate(-50%, -50%);
+
+}
+
+.project::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.612);
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.project:hover::before {
+    opacity: 1;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.scroller {
+    display: inline-block;
+    animation: 10s scroll infinite linear;
+}
+
+.project-scroller:hover .scroller {
+    animation-play-state: paused;
+
+}
+
+.project-scroller::before,
+.project-scroller::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    width: 5rem;
+    height: 100%;
+    z-index: 2;
+}
+
+.project-scroller::before {
+    left: 0;
+    background: linear-gradient(to right, var(--primary-white), transparent);
+}
+
+.project-scroller::after {
+    right: 0;
+    background: linear-gradient(to left, var(--primary-white), transparent);
+}
+
+
+@keyframes scroll {
+
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+@keyframes my{
+  0%, 100%
+  {  border-radius: 60% 40% 30% 70% /60% 30% 70% 40%;
+
+  }
+  50%{
+    border-radius: 30% 60% 70% 40% /50% 60% 30% 60%;
+  }
+
+}
